@@ -6,17 +6,40 @@ This API enables developers to create applications that provide song recommendat
 
 Let's make millions! 💰 💰 💰
 
-### Setup
+## Assessment Instructions
 
-1. Clone the template repository.
-2. Navigate to the created directory using `cd`.
-3. Activate the Pipenv environment with `pipenv shell`.
-4. Install the dependencies using `pipenv install`.
-5. Open the project in Visual Studio Code.
-6. Ensure that the correct interpreter is selected.
-7. Implement the code.
+Follow these steps to complete the assessment:
 
-### MVP Routes by Entity
+1. Start by cloning the template repository to your local machine.
+   - Use this link to copy over the template to your GitHub profile: [GitHub Template Link](https://githubtools.reppedintech.com/u/nss-evening-web-development/django-api-assessment)
+
+2. Once you have cloned the repository, navigate to the project directory using the command line.
+   - Use the `cd` command to change to the project directory.
+
+3. Activate the Pipenv environment to ensure you are using the correct dependencies.
+   - Run the command `pipenv shell` to activate the Pipenv environment.
+
+4. Install the necessary dependencies for the project.
+   - Use the command `pipenv install` to install the required dependencies.
+
+5. Open the project in your preferred code editor (e.g., Visual Studio Code) to start working on the implementation.
+
+6. Study the provided Entity Relationship Diagram (ERD) to understand the data structure and relationships between entities.
+   - You can find the ERD [here](https://dbdocs.io/trinitycterry/Tuna-Piano-API?view=relationships).
+
+7. Plan the construction of the API based on the MVP requirements and the information provided in this Readme.
+   - Make sure you understand the expected functionality and any constraints.
+
+8. Implement the specified MVP features, following the guidelines and examples provided in this Readme.
+   - Refer to the Readme for detailed information on each route and its requirements.
+
+9. Thoroughly test your API to ensure its functionality and reliability.
+   - Utilize appropriate testing methodologies and frameworks to validate your code.
+
+10. Once you have completed the assessment, present your work to the instructional team.
+    - Provide all necessary documentation, including the link to your GitHub repository.
+
+## MVP Routes by Entity
 
 These are all the available routes for this API. Each route has an associated ticket containing the following information:
 - Route description.
@@ -28,7 +51,7 @@ These are all the available routes for this API. Each route has an associated ti
     - JSON body (if applicable).
     - Status code.
 
-#### 🎶 Songs
+### 🎶 Songs
 
 - [Create a Song](./documentation/issue-tickets/Create-Song.md)
 - [Delete a Song](./documentation/issue-tickets/Delete-Song.md)
@@ -36,7 +59,7 @@ These are all the available routes for this API. Each route has an associated ti
 - [View a List of all the Songs](./documentation/issue-tickets/List-Songs.md)
 - [Details view of a single Song and its associated genres and artist details](./documentation/issue-tickets/Details-Song.md)
 
-#### 👩🏾‍🎤 Artists
+### 👩🏾‍🎤 Artists
 
 - [Create an Artist](./documentation/issue-tickets/Create-an-Artist.md)
 - [Delete an Artist](./documentation/issue-tickets/Delete-an-Artist.md)
@@ -44,7 +67,7 @@ These are all the available routes for this API. Each route has an associated ti
 - [View a List of all the Artists](./documentation/issue-tickets/List-Artists.md)
 - [Details view of a single Artist and the songs associated with them](./documentation/issue-tickets/Details-Artist.md)
 
-#### 🎸 Genres
+### 🎸 Genres
 
 - [Create a Genre](./documentation/issue-tickets/Create-Genre.md)
 - [Delete a Genre](./documentation/issue-tickets/Delete-Genre.md)
@@ -54,40 +77,38 @@ These are all the available routes for this API. Each route has an associated ti
 
 ### Stretch Goals
 
-These are examples of stretch goals that you can tackle once you have been MVP approved for the above features!
+These are examples of stretch goals that you can tackle once you have been MVP approved for the above features:
 
 - Plan and Build the Frontend for the MVP routes
-- [Popular genres: Retrieve a list of genres based on the number of associated songs](./documentation/issue-tickets/Popular-genres.md)
-- [Related artists: Retrieve artists with similar genres](./documentation/issue-tickets/Related-artists.md)
+- [Retrieve a list of popular genres based on the number of associated songs](./documentation/issue-tickets/Popular-genres.md)
+- [Retrieve artists with similar genres](./documentation/issue-tickets/Related-artists.md)
 - [Search songs by genre](./documentation/issue-tickets/Search-songs-by-genre.md)
 - [Search artists by genre](./documentation/issue-tickets/Search-artists.md)
-- Search all entities by (name/title/description)
+- Implement a search functionality to search all entities by name, title, or description.
 
 ## Data Design
 
-![ERD Picture](https://github.com/TrinityChristiana/django-api-assessment/assets/31781724/a39bab27-bc1e-4a42-9ecc-ab96130bb509)
-- [Link to ERD Docs](https://dbdocs.io/trinitycterry/Tuna-Piano-API?view=relationships)
-
-To include the specific instructions for seeking help, you can update the "Seeking Help and Clarification" section as follows:
+To understand the data structure and relationships between entities, refer to the Entity Relationship Diagram (ERD) provided [here](https://dbdocs.io/trinitycterry/Tuna-Piano-API?view=relationships).
 
 ## Seeking Help and Clarification
 
-If you encounter challenges or need clarification during the assessment, follow these steps:
+If you encounter any challenges during the assessment and need help or clarification, follow these steps:
 
-1. Create a new discussion ticket in the [GitHub Discussions](https://github.com/orgs/nss-evening-web-development/discussions) repository, providing all the necessary details about your issue or question.
-2. Include a clear and concise description of the problem, along with any relevant code snippets, error messages, or logs.
-3. Specify the context of the problem, including the route or feature you are working on and any relevant dependencies.
-4. Once you have created the discussion ticket, post a link to it in the Help Thread within your cohort's designated communication channel (e.g., Slack).
-5. Be patient and allow time for the instructional team to review and respond to your ticket. They will provide guidance or clarification to help you move forward.
+1. Create a discussion ticket in the [NSS Evening Web Development Discussions](https://github.com/orgs/nss-evening-web-development/discussions) repository.
+2. Include all the required information in the ticket, such as the problem you're facing and any relevant code or error messages.
+3. Post the ticket in the Help Thread in the cohort channel to seek assistance from your peers and instructors.
 
-By following these steps, you can ensure that your questions and issues are properly documented and brought to the attention of the instructional team. This process helps streamline communication and allows the team to provide timely and targeted assistance to support your progress during the assessment.
+## Code Organization and Best Practices
 
-## Best Practices for Code Organization and Implementation
+To ensure clean and well-structured code, consider the following tips and best practices:
 
-Consider the following tips and best practices to ensure an organized and well-structured codebase:
+- Follow the guidelines and examples provided in the Readme to maintain consistency in coding style and structure.
+- Use meaningful variable and function names that accurately describe their purpose.
+- Break down your code into smaller functions or modules to improve readability and maintainability.
+- Implement error handling and data validation to ensure the API handles unexpected situations gracefully.
+- Consider implementing security measures, such as authentication and authorization, based on the requirements of your application.
+- If you're building the frontend for the MVP routes, follow best practices for organizing code, structuring endpoints, and managing state in your chosen frontend framework.
 
-- Follow the principles of separation of concerns and modularity, organizing code into logical components and modules.
-- Adopt a consistent coding style and naming conventions to enhance readability and maintainability.
-- Implement reusable functions or utility modules to avoid code duplication.
-- Comment code sections that might require additional explanation or clarification.
-- Properly document the API endpoints, including their purpose, expected inputs, and outputs.
+By adhering to these best practices, you can create a well-designed and efficient Django API that meets the specified requirements.
+
+Remember, the purpose of this assessment is to showcase your Django competencies and demonstrate your ability to build a functional API. Good luck, and don't hesitate to seek help when needed!
