@@ -2,128 +2,92 @@
 
 ## 🐟 Tuna Piano API
 
-This API will allow developers to build applications that recommend songs based on a provided genre. It will manage artists, songs produced by those artists, and the genre for each song.
+This API enables developers to create applications that provide song recommendations based on genre. It manages non-user specific data, including artists, their songs, and the associated genre for each song.
 
-We'll make millions 💰 💰 💰
-
-There is no authentication needed for this API, so make sure that in your `settings.py` module that the following `AllowAny` setting exists for default persmissions.
-
-```py
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ],
-}
-```
-
-## Vocabulary
-
-When you are done building this project, let one of your coaches know and be prepared to discuss the following learning objectives so that you can ensure that your vocabulary is solid.
-
-1. Understand and explain what a database model is.
-2. Understand and explain what a view is.
-3. Understand and explain what serializer is.
-4. Understand and explain how to expose routes in your API.
-5.  Understand and explain how the `related_name` attribute works on database models.
-6. Understand and explain a custom property on a model.
-7. Understand and explain how to use the ORM to get all rows from a table.
-8. Understand and explain how to use the ORM to get single rows from a table.
-9. Understand and explain how to use the ORM to get some rows from a table with a filter.
-10. Understand and explain how to access request body data.
-11. Understand and explain how to access URL query parameters.
-12. Be able to load data from a fixture.
-
+Let's make millions! 💰 💰 💰
 
 ### Setup
 
-1. Clone the template repository
-2. `cd` to the directory it creates
-3. `pipenv shell`
-4. `pipenv install`
-5. Open in VS Code
-6. Make sure the correct interpreter is selected
-7. Implement the code
+1. Clone the template repository.
+2. Navigate to the created directory using `cd`.
+3. Activate the Pipenv environment with `pipenv shell`.
+4. Install the dependencies using `pipenv install`.
+5. Open the project in Visual Studio Code.
+6. Ensure that the correct interpreter is selected.
+7. Implement the code.
 
+### MVP Routes by Entity
 
-### 🎶 Songs
+These are all the available routes for this API. Each route has an associated ticket containing the following information:
+- Route description.
+- Request structure:
+    - HTTP method.
+    - Route path.
+    - JSON body (if applicable).
+- Response structure:
+    - JSON body (if applicable).
+    - Status code.
 
-1. Create a new song
-2. List all songs with genre and artist information embedded
-3. Get a single song with genre and artist information embedded
-4. List songs assigned to a specific genre
-5. List songs assigned to a specific artist
+#### 🎶 Songs
 
-### 👩🏾‍🎤 Artists
+- [Create a Song](./documentation/issue-tickets/Create-Song.md)
+- [Delete a Song](./documentation/issue-tickets/Delete-Song.md)
+- [Update a Song](./documentation/issue-tickets/Update-Song.md)
+- [View a List of all the Songs](./documentation/issue-tickets/List-Songs.md)
+- [Details view of a single Song and its associated genres and artist details](./documentation/issue-tickets/Details-Song.md)
 
-1. Create a new artist
-2. Get a single artist.
-3. List all artists.
+#### 👩🏾‍🎤 Artists
 
-The artist response should include the total number of songs in the database for the artist. It should also include a serialized list of all related songs _(see example below)_.
+- [Create an Artist](./documentation/issue-tickets/Create-an-Artist.md)
+- [Delete an Artist](./documentation/issue-tickets/Delete-an-Artist.md)
+- [Update an Artist](./documentation/issue-tickets/Update-an-Artist.md)
+- [View a List of all the Artists](./documentation/issue-tickets/List-Artists.md)
+- [Details view of a single Artist and the songs associated with them](./documentation/issue-tickets/Details-Artist.md)
+
+#### 🎸 Genres
+
+- [Create a Genre](./documentation/issue-tickets/Create-Genre.md)
+- [Delete a Genre](./documentation/issue-tickets/Delete-Genre.md)
+- [Update a Genre](./documentation/issue-tickets/Update-Genre.md)
+- [View a List of all the Genres](./documentation/issue-tickets/List-Genres.md)
+- [Details view of a single Genre and the songs associated with it](./documentation/issue-tickets/Details-Genre.md)
+
+### Stretch Goals
+
+These are examples of stretch goals that you can tackle once you have been MVP approved for the above features!
+
+- Plan and Build the Frontend for the MVP routes
+- [Popular genres: Retrieve a list of genres based on the number of associated songs](./documentation/issue-tickets/Popular-genres.md)
+- [Related artists: Retrieve artists with similar genres](./documentation/issue-tickets/Related-artists.md)
+- [Search songs by genre](./documentation/issue-tickets/Search-songs-by-genre.md)
+- [Search artists by genre](./documentation/issue-tickets/Search-artists.md)
+- Search all entities by (name/title/description)
 
 ## Data Design
 
-### Artists
+![ERD Picture](https://github.com/TrinityChristiana/django-api-assessment/assets/31781724/a39bab27-bc1e-4a42-9ecc-ab96130bb509)
+- [Link to ERD Docs](https://dbdocs.io/trinitycterry/Tuna-Piano-API?view=relationships)
 
-The following information should be captured for each artist.
+To include the specific instructions for seeking help, you can update the "Seeking Help and Clarification" section as follows:
 
-1. Name
-2. Age
-3. Bio
+## Seeking Help and Clarification
 
-### Songs
+If you encounter challenges or need clarification during the assessment, follow these steps:
 
-The following information should be captured for each song.
+1. Create a new discussion ticket in the [GitHub Discussions](https://github.com/orgs/nss-evening-web-development/discussions) repository, providing all the necessary details about your issue or question.
+2. Include a clear and concise description of the problem, along with any relevant code snippets, error messages, or logs.
+3. Specify the context of the problem, including the route or feature you are working on and any relevant dependencies.
+4. Once you have created the discussion ticket, post a link to it in the Help Thread within your cohort's designated communication channel (e.g., Slack).
+5. Be patient and allow time for the instructional team to review and respond to your ticket. They will provide guidance or clarification to help you move forward.
 
-1. Title
-2. Artist
-3. Genre
-4. Album name
-5. Length
+By following these steps, you can ensure that your questions and issues are properly documented and brought to the attention of the instructional team. This process helps streamline communication and allows the team to provide timely and targeted assistance to support your progress during the assessment.
 
-### Genres
+## Best Practices for Code Organization and Implementation
 
-The genre model only needs to have the name of the genre on it.
+Consider the following tips and best practices to ensure an organized and well-structured codebase:
 
-## JSON Responses
-
-Set up your serializers to produce the following JSON responses for getting songs and artists.
-
-## Song
-
-```json
-{
-    "id": 1,
-    "title": "Song Title",
-    "album": "Album Title",
-    "length": 342,
-    "genre": {
-        "description": "Pop"
-    },
-    "artist": {
-        "name": "Yerena Gonzalez"
-    }
-}
-```
-
-## Artist
-
-```json
-{
-    "id": 1,
-    "name": "Yerena Gonzalez",
-    "age": 26,
-    "bio": "Accusamus maxime sed illo doloribus minus. Quaerat et sed et. Harum consequatur hic ut magnam consequatur labore culpa tempore.",
-    "songs": [
-        {
-            "id": 1,
-            "title": "Song Title",
-            "album": "Album Title"
-        }
-    ],
-    "song_count": 1
-}
-```
+- Follow the principles of separation of concerns and modularity, organizing code into logical components and modules.
+- Adopt a consistent coding style and naming conventions to enhance readability and maintainability.
+- Implement reusable functions or utility modules to avoid code duplication.
+- Comment code sections that might require additional explanation or clarification.
+- Properly document the API endpoints, including their purpose, expected inputs, and outputs.
